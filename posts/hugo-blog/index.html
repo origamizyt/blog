@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='什么是 Hugo  Hugo 是一个快速和现代的静态网站生成器写在 Go 中，旨在使网站创建再次有趣。&amp;ndash; Hugo 官网
+ 简而言之，Hugo 就是把 markdown 文件转化为 html 文件的工具，用 Go 语言写成，并且能够适配各种主题， 支持博客论坛的框架。Hugo 可以快速 deploy 到各大主机供应商，节省无谓操作的时间。
+安装 Hugo 我的系统是 Windows-10-10.0.19041-SP0，使用 Chocolatey 安装 hugo:
+choco install hugo-extended -confirm  注：你也可以安装 hugo，但这将导致一些主题不可用。
+ 如果你使用 macOS 或 Linux，也许你可以使用 MacPorts、Debian、apt-get 或 RPM 等包管理器安装。 当然，你也可以从源代码使用 Go 构建工具编译。运行 hugo version 命令以验证安装：
+$ hugo version hugo v0.86.1-F6821B88&#43;extended windows/amd64 BuildDate=2021-07-30T10:13:35Z VendorInfo=gohugoio 创建博客 新建网站 使用 hugo new site 命令创建网站。这将为你新建一个目录。
+$ hugo new site my-blog .'><title>用 Hugo 搭建自己的博客 #1</title>
+
+<link rel='canonical' href='/posts/hugo-blog/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='用 Hugo 搭建自己的博客 #1'>
+<meta property='og:description' content='什么是 Hugo  Hugo 是一个快速和现代的静态网站生成器写在 Go 中，旨在使网站创建再次有趣。&amp;ndash; Hugo 官网
+ 简而言之，Hugo 就是把 markdown 文件转化为 html 文件的工具，用 Go 语言写成，并且能够适配各种主题， 支持博客论坛的框架。Hugo 可以快速 deploy 到各大主机供应商，节省无谓操作的时间。
+安装 Hugo 我的系统是 Windows-10-10.0.19041-SP0，使用 Chocolatey 安装 hugo:
+choco install hugo-extended -confirm  注：你也可以安装 hugo，但这将导致一些主题不可用。
+ 如果你使用 macOS 或 Linux，也许你可以使用 MacPorts、Debian、apt-get 或 RPM 等包管理器安装。 当然，你也可以从源代码使用 Go 构建工具编译。运行 hugo version 命令以验证安装：
+$ hugo version hugo v0.86.1-F6821B88&#43;extended windows/amd64 BuildDate=2021-07-30T10:13:35Z VendorInfo=gohugoio 创建博客 新建网站 使用 hugo new site 命令创建网站。这将为你新建一个目录。
+$ hugo new site my-blog .'>
+<meta property='og:url' content='/posts/hugo-blog/'>
+<meta property='og:site_name' content='origamizyt 的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='hugo' /><meta property='article:tag' content='about-this-blog' /><meta property='article:published_time' content='2021-07-31T23:16:13&#43;08:00'/><meta property='article:modified_time' content='2021-07-31T23:16:13&#43;08:00'/>
+<meta name="twitter:title" content="用 Hugo 搭建自己的博客 #1">
+<meta name="twitter:description" content="什么是 Hugo  Hugo 是一个快速和现代的静态网站生成器写在 Go 中，旨在使网站创建再次有趣。&amp;ndash; Hugo 官网
+ 简而言之，Hugo 就是把 markdown 文件转化为 html 文件的工具，用 Go 语言写成，并且能够适配各种主题， 支持博客论坛的框架。Hugo 可以快速 deploy 到各大主机供应商，节省无谓操作的时间。
+安装 Hugo 我的系统是 Windows-10-10.0.19041-SP0，使用 Chocolatey 安装 hugo:
+choco install hugo-extended -confirm  注：你也可以安装 hugo，但这将导致一些主题不可用。
+ 如果你使用 macOS 或 Linux，也许你可以使用 MacPorts、Debian、apt-get 或 RPM 等包管理器安装。 当然，你也可以从源代码使用 Go 构建工具编译。运行 hugo version 命令以验证安装：
+$ hugo version hugo v0.86.1-F6821B88&#43;extended windows/amd64 BuildDate=2021-07-30T10:13:35Z VendorInfo=gohugoio 创建博客 新建网站 使用 hugo new site 命令创建网站。这将为你新建一个目录。
+$ hugo new site my-blog ."><style>
+    :root {
+        --code-font-family: 'Oxygen Mono', monospace;
+        --pre-background-color: #0B2F3A;
+    }
+</style>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.font.im/css?family=Oxygen+Mono";
+    
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+    
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>返回</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/coding/" >
+                coding
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/posts/hugo-blog/">用 Hugo 搭建自己的博客 #1</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 31, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 min read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h2 id="什么是-hugo">什么是 Hugo</h2>
+<blockquote>
+<p>Hugo 是一个快速和现代的静态网站生成器写在 Go 中，旨在使网站创建再次有趣。&ndash; Hugo 官网</p>
+</blockquote>
+<p>简而言之，Hugo 就是把 markdown 文件转化为 html 文件的工具，用 Go 语言写成，并且能够适配各种主题，
+支持博客论坛的框架。Hugo 可以快速 deploy 到各大主机供应商，节省无谓操作的时间。</p>
+<h2 id="安装-hugo">安装 Hugo</h2>
+<p>我的系统是 Windows-10-10.0.19041-SP0，使用 Chocolatey 安装 hugo:</p>
+<pre><code>choco install hugo-extended -confirm
+</code></pre><blockquote>
+<p>注：你也可以安装 hugo，但这将导致一些主题不可用。</p>
+</blockquote>
+<p>如果你使用 macOS 或 Linux，也许你可以使用 MacPorts、Debian、apt-get 或 RPM 等包管理器安装。
+当然，你也可以从源代码使用 Go 构建工具编译。运行 <code>hugo version</code> 命令以验证安装：</p>
+<pre><code>$ hugo version
+hugo v0.86.1-F6821B88+extended windows/amd64 BuildDate=2021-07-30T10:13:35Z VendorInfo=gohugoio
+</code></pre><h2 id="创建博客">创建博客</h2>
+<h3 id="新建网站">新建网站</h3>
+<p>使用 <code>hugo new site</code> 命令创建网站。这将为你新建一个目录。</p>
+<pre><code>$ hugo new site my-blog
+...
+$ cd my-blog
+</code></pre><h3 id="添加主题">添加主题</h3>
+<p>现在，你需要为你的博客添加一个主题。在 <a class="link" href="http://themes.gohugo.io"  target="_blank" rel="noopener"
+    >themes.gohugo.io</a> 上，你可以浏览不同同种类的主题。本博客使用了
+<a class="link" href="http://themes.gohugo.io/themes/hugo-theme-stack"  target="_blank" rel="noopener"
+    >Stack</a> 主题。第一步，你需要克隆主题的代码库到 themes 目录下：</p>
+<pre><code>$ git clone https://hub.fastgit.org/CaiJimmy/hugo-theme-stack.git themes/hugo-theme-stack
+</code></pre><blockquote>
+<p>注：在国内 FastGit 镜像速度更快。</p>
+</blockquote>
+<p>对于一般的主题，只需在根目录的 <code>config.toml</code> 文件中做如下配置：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="nx">theme</span> <span class="p">=</span> <span class="s2">&#34;my-custom-theme&#34;</span> <span class="c"># 替换为你的主题</span>
+</code></pre></div><p>对于一些特殊的主题（如 Stack）则需按官方步骤进行操作。要使用 Stack 主题，需要将 themes/hugo-theme-stack/exampleSite/config.yaml
+中的内容复制到 config.toml 中，我使用 Python 进行了一小步转换。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">yaml</span><span class="o">,</span> <span class="nn">toml</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">yaml_content</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;themes\hugo-theme-stack\exampleSite\config.yaml&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">yaml_content</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;config.toml&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">toml</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+</code></pre></div><h2 id="配置-configtoml">配置 config.toml</h2>
+<p>打开 config.toml 文件，接下来将会对其进行必要的修改。</p>
+<h3 id="baseurl">baseurl</h3>
+<p><code>baseurl</code> 是应用程序挂载的 URL，暂时将其修改为 <code>http://localhost:1313</code>。</p>
+<h3 id="languagecode">languageCode</h3>
+<p><code>languageCode</code> 指你所使用的语言代码，英语为 <code>en-us</code>，中文 <code>zh-cn</code>。</p>
+<h3 id="title">title</h3>
+<p>修改 <code>title</code> 为你的博客标题，它将会出现在左侧侧边栏以及网页标题中。</p>
+<p>接下来是一些 Stack 特有属性。</p>
+<h3 id="paramssidebar-stack">params.sidebar (Stack)</h3>
+<p>将其中的 <code>subtitle</code> 改为你想要的副标题。</p>
+<h3 id="paramssidebaravatar-stack">params.sidebar.avatar (Stack)</h3>
+<p>把你的头像放到 static 文件夹里，然后修改配置如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">sidebar</span><span class="p">.</span><span class="nx">avatar</span><span class="p">]</span>
+<span class="nx">enabled</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="nx">local</span> <span class="p">=</span> <span class="kc">false</span>
+<span class="nx">src</span> <span class="p">=</span> <span class="s2">&#34;/avatar.jpg&#34;</span> <span class="c"># 改为图片名</span>
+</code></pre></div><h3 id="menumain-stack">menu.main (Stack)</h3>
+<p><code>menu.main</code> 是一个数组，代表侧边栏菜单项，将其改为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+<span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;home&#34;</span>
+<span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;主页&#34;</span>
+<span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/&#34;</span>
+<span class="nx">weight</span> <span class="p">=</span> <span class="mi">-100</span>
+<span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;home&#34;</span>
+<span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+<span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;posts&#34;</span>
+<span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;博客&#34;</span>
+<span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/posts&#34;</span>
+<span class="nx">weight</span> <span class="p">=</span> <span class="mi">-100</span>
+<span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;messages&#34;</span>
+</code></pre></div><h2 id="第一个博文">第一个博文</h2>
+<h3 id="创建文章">创建文章</h3>
+<p>使用 <code>hugo new</code> 命令创建文章，文章为 Markdown 格式，以 .md 结尾。</p>
+<pre><code>$ hugo new posts/first-blog.md
+.../my-blog/content/posts/first-blog.md created
+</code></pre><p>正常情况下，<code>first-blog.md</code> 应包含如下内容：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+</span><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">First Blog</span><span class="w">
+</span><span class="w"></span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="ld">2021-07-31T23:16:13</span><span class="m">+08</span><span class="p">:</span><span class="m">00</span><span class="w">
+</span><span class="w"></span><span class="nt">draft</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w"></span><span class="nn">---</span><span class="w">
+</span></code></pre></div><h3 id="修改-front-matters">修改 Front Matters</h3>
+<p>个人来讲，我比较喜欢 toml 格式的 Front Matters，所以我把它改写成了 toml：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="err">+++</span>
+<span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;First Blog&#34;</span>
+<span class="nx">date</span> <span class="p">=</span> <span class="ld">2021-07-31T23:16:13+08:00</span>
+<span class="nx">draft</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="err">+++</span>
+</code></pre></div><p>改一下标题，取消 Draft，加入一些 Tag 和 Category：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="err">+++</span>
+<span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;用 Hugo 搭建自己的博客 #1&#34;</span>
+<span class="nx">date</span> <span class="p">=</span> <span class="ld">2021-07-31T23:16:13+08:00</span>
+<span class="nx">draft</span> <span class="p">=</span> <span class="kc">false</span>
+<span class="nx">tags</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;hugo&#34;</span><span class="p">,</span> <span class="s2">&#34;about-this-blog&#34;</span><span class="p">]</span>
+<span class="nx">categories</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;coding&#34;</span><span class="p">]</span>
+<span class="err">+++</span>
+</code></pre></div><p>在三个加号的下方加入一些内容：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="gh"># Hello, Hugo!
+</span><span class="gh"></span>
+<span class="gu">## *Welcome* to my **hugo** blog!
+</span></code></pre></div><p>完成！</p>
+<h2 id="本地浏览">本地浏览</h2>
+<p>运行 <code>hugo server</code> 来启动 Hugo 服务器：</p>
+<pre><code>$ hugo server
+...
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+</code></pre><p>访问 http://localhost:1313 来看看你的新博客！（我的博客长这样）</p>
+<p><img src="/hugo-blog-1/overview.png" alt="Overview"  /></p>
+<p>还不错吧！</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/hugo/">hugo</a>
+        
+            <a href="/tags/about-this-blog/">about-this-blog</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+     
+     
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "origamizyt-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 origamizyt 的博客
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">目录</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#什么是-hugo">什么是 Hugo</a></li>
+    <li><a href="#安装-hugo">安装 Hugo</a></li>
+    <li><a href="#创建博客">创建博客</a>
+      <ol>
+        <li><a href="#新建网站">新建网站</a></li>
+        <li><a href="#添加主题">添加主题</a></li>
+      </ol>
+    </li>
+    <li><a href="#配置-configtoml">配置 config.toml</a>
+      <ol>
+        <li><a href="#baseurl">baseurl</a></li>
+        <li><a href="#languagecode">languageCode</a></li>
+        <li><a href="#title">title</a></li>
+        <li><a href="#paramssidebar-stack">params.sidebar (Stack)</a></li>
+        <li><a href="#paramssidebaravatar-stack">params.sidebar.avatar (Stack)</a></li>
+        <li><a href="#menumain-stack">menu.main (Stack)</a></li>
+      </ol>
+    </li>
+    <li><a href="#第一个博文">第一个博文</a>
+      <ol>
+        <li><a href="#创建文章">创建文章</a></li>
+        <li><a href="#修改-front-matters">修改 Front Matters</a></li>
+      </ol>
+    </li>
+    <li><a href="#本地浏览">本地浏览</a></li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

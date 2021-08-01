@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>origamizyt 的博客</title>
+        <link>/</link>
+        <description>Recent content on origamizyt 的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-Hans</language>
+        <lastBuildDate>Sat, 31 Jul 2021 23:16:13 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>用 Hugo 搭建自己的博客 #1</title>
+        <link>/posts/hugo-blog/</link>
+        <pubDate>Sat, 31 Jul 2021 23:16:13 +0800</pubDate>
+        
+        <guid>/posts/hugo-blog/</guid>
+        <description>&lt;h2 id=&#34;什么是-hugo&#34;&gt;什么是 Hugo&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hugo 是一个快速和现代的静态网站生成器写在 Go 中，旨在使网站创建再次有趣。&amp;ndash; Hugo 官网&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;简而言之，Hugo 就是把 markdown 文件转化为 html 文件的工具，用 Go 语言写成，并且能够适配各种主题，
+支持博客论坛的框架。Hugo 可以快速 deploy 到各大主机供应商，节省无谓操作的时间。&lt;/p&gt;
+&lt;h2 id=&#34;安装-hugo&#34;&gt;安装 Hugo&lt;/h2&gt;
+&lt;p&gt;我的系统是 Windows-10-10.0.19041-SP0，使用 Chocolatey 安装 hugo:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;choco install hugo-extended -confirm
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;注：你也可以安装 hugo，但这将导致一些主题不可用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果你使用 macOS 或 Linux，也许你可以使用 MacPorts、Debian、apt-get 或 RPM 等包管理器安装。
+当然，你也可以从源代码使用 Go 构建工具编译。运行 &lt;code&gt;hugo version&lt;/code&gt; 命令以验证安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hugo version
+hugo v0.86.1-F6821B88+extended windows/amd64 BuildDate=2021-07-30T10:13:35Z VendorInfo=gohugoio
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;创建博客&#34;&gt;创建博客&lt;/h2&gt;
+&lt;h3 id=&#34;新建网站&#34;&gt;新建网站&lt;/h3&gt;
+&lt;p&gt;使用 &lt;code&gt;hugo new site&lt;/code&gt; 命令创建网站。这将为你新建一个目录。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hugo new site my-blog
+...
+$ cd my-blog
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;添加主题&#34;&gt;添加主题&lt;/h3&gt;
+&lt;p&gt;现在，你需要为你的博客添加一个主题。在 &lt;a class=&#34;link&#34; href=&#34;http://themes.gohugo.io&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;themes.gohugo.io&lt;/a&gt; 上，你可以浏览不同同种类的主题。本博客使用了
+&lt;a class=&#34;link&#34; href=&#34;http://themes.gohugo.io/themes/hugo-theme-stack&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Stack&lt;/a&gt; 主题。第一步，你需要克隆主题的代码库到 themes 目录下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git clone https://hub.fastgit.org/CaiJimmy/hugo-theme-stack.git themes/hugo-theme-stack
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;注：在国内 FastGit 镜像速度更快。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;对于一般的主题，只需在根目录的 &lt;code&gt;config.toml&lt;/code&gt; 文件中做如下配置：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;nx&#34;&gt;theme&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;my-custom-theme&amp;#34;&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;# 替换为你的主题&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;对于一些特殊的主题（如 Stack）则需按官方步骤进行操作。要使用 Stack 主题，需要将 themes/hugo-theme-stack/exampleSite/config.yaml
+中的内容复制到 config.toml 中，我使用 Python 进行了一小步转换。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;yaml&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;toml&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;yaml_content&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;sa&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;themes\hugo-theme-stack\exampleSite\config.yaml&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;read&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;yaml&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;load&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;yaml_content&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;config.toml&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;w&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;write&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;toml&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dumps&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;配置-configtoml&#34;&gt;配置 config.toml&lt;/h2&gt;
+&lt;p&gt;打开 config.toml 文件，接下来将会对其进行必要的修改。&lt;/p&gt;
+&lt;h3 id=&#34;baseurl&#34;&gt;baseurl&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;baseurl&lt;/code&gt; 是应用程序挂载的 URL，暂时将其修改为 &lt;code&gt;http://localhost:1313&lt;/code&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;languagecode&#34;&gt;languageCode&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;languageCode&lt;/code&gt; 指你所使用的语言代码，英语为 &lt;code&gt;en-us&lt;/code&gt;，中文 &lt;code&gt;zh-cn&lt;/code&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;title&#34;&gt;title&lt;/h3&gt;
+&lt;p&gt;修改 &lt;code&gt;title&lt;/code&gt; 为你的博客标题，它将会出现在左侧侧边栏以及网页标题中。&lt;/p&gt;
+&lt;p&gt;接下来是一些 Stack 特有属性。&lt;/p&gt;
+&lt;h3 id=&#34;paramssidebar-stack&#34;&gt;params.sidebar (Stack)&lt;/h3&gt;
+&lt;p&gt;将其中的 &lt;code&gt;subtitle&lt;/code&gt; 改为你想要的副标题。&lt;/p&gt;
+&lt;h3 id=&#34;paramssidebaravatar-stack&#34;&gt;params.sidebar.avatar (Stack)&lt;/h3&gt;
+&lt;p&gt;把你的头像放到 static 文件夹里，然后修改配置如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;sidebar&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;avatar&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;enabled&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;local&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;src&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/avatar.jpg&amp;#34;&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;# 改为图片名&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;menumain-stack&#34;&gt;menu.main (Stack)&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;menu.main&lt;/code&gt; 是一个数组，代表侧边栏菜单项，将其改为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;menu&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;identifier&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;home&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;主页&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;weight&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;-100&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;pre&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;home&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;[[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;menu&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;identifier&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;posts&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;博客&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/posts&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;weight&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;-100&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;pre&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;messages&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;第一个博文&#34;&gt;第一个博文&lt;/h2&gt;
+&lt;h3 id=&#34;创建文章&#34;&gt;创建文章&lt;/h3&gt;
+&lt;p&gt;使用 &lt;code&gt;hugo new&lt;/code&gt; 命令创建文章，文章为 Markdown 格式，以 .md 结尾。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hugo new posts/first-blog.md
+.../my-blog/content/posts/first-blog.md created
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;正常情况下，&lt;code&gt;first-blog.md&lt;/code&gt; 应包含如下内容：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;nn&#34;&gt;---&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;First Blog&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;ld&#34;&gt;2021-07-31T23:16:13&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;+08&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;00&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;draft&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nn&#34;&gt;---&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;修改-front-matters&#34;&gt;修改 Front Matters&lt;/h3&gt;
+&lt;p&gt;个人来讲，我比较喜欢 toml 格式的 Front Matters，所以我把它改写成了 toml：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;err&#34;&gt;+++&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;title&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;First Blog&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;ld&#34;&gt;2021-07-31T23:16:13+08:00&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;draft&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;+++&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;改一下标题，取消 Draft，加入一些 Tag 和 Category：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;err&#34;&gt;+++&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;title&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;用 Hugo 搭建自己的博客 #1&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;ld&#34;&gt;2021-07-31T23:16:13+08:00&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;draft&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;tags&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;hugo&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;about-this-blog&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;categories&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;coding&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;+++&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在三个加号的下方加入一些内容：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-md&#34; data-lang=&#34;md&#34;&gt;&lt;span class=&#34;gh&#34;&gt;# Hello, Hugo!
+&lt;/span&gt;&lt;span class=&#34;gh&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;gu&#34;&gt;## *Welcome* to my **hugo** blog!
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;完成！&lt;/p&gt;
+&lt;h2 id=&#34;本地浏览&#34;&gt;本地浏览&lt;/h2&gt;
+&lt;p&gt;运行 &lt;code&gt;hugo server&lt;/code&gt; 来启动 Hugo 服务器：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hugo server
+...
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;访问 http://localhost:1313 来看看你的新博客！（我的博客长这样）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/hugo-blog-1/overview.png&#34; alt=&#34;Overview&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;还不错吧！&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

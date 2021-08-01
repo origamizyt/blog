@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on origamizyt 的博客</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on origamizyt 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Sat, 31 Jul 2021 23:16:13 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>about-this-blog</title>
+      <link>/tags/about-this-blog/</link>
+      <pubDate>Sat, 31 Jul 2021 23:16:13 +0800</pubDate>
+      
+      <guid>/tags/about-this-blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>/tags/hugo/</link>
+      <pubDate>Sat, 31 Jul 2021 23:16:13 +0800</pubDate>
+      
+      <guid>/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
