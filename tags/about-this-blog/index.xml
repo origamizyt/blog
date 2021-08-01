@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>about-this-blog on origamizyt 的博客</title>
-    <link>/tags/about-this-blog/</link>
+    <link>http://ztools.cf/blog/tags/about-this-blog/</link>
     <description>Recent content in about-this-blog on origamizyt 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sat, 31 Jul 2021 23:16:13 +0800</lastBuildDate><atom:link href="/tags/about-this-blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 31 Jul 2021 23:16:13 +0800</lastBuildDate><atom:link href="http://ztools.cf/blog/tags/about-this-blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>用 Hugo 搭建自己的博客 #1</title>
-      <link>/posts/hugo-blog/</link>
+      <link>http://ztools.cf/blog/posts/hugo-blog/</link>
       <pubDate>Sat, 31 Jul 2021 23:16:13 +0800</pubDate>
       
-      <guid>/posts/hugo-blog/</guid>
+      <guid>http://ztools.cf/blog/posts/hugo-blog/</guid>
       <description>什么是 Hugo  Hugo 是一个快速和现代的静态网站生成器写在 Go 中，旨在使网站创建再次有趣。&amp;ndash; Hugo 官网
  简而言之，Hugo 就是把 markdown 文件转化为 html 文件的工具，用 Go 语言写成，并且能够适配各种主题， 支持博客论坛的框架。Hugo 可以快速 deploy 到各大主机供应商，节省无谓操作的时间。
 安装 Hugo 我的系统是 Windows-10-10.0.19041-SP0，使用 Chocolatey 安装 hugo:

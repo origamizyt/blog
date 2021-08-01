@@ -2,28 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/tags/about-this-blog/</loc>
+    <loc>http://ztools.cf/blog/tags/about-this-blog/</loc>
     <lastmod>2021-07-31T23:16:13+08:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>http://ztools.cf/blog/categories/</loc>
     <lastmod>2021-07-31T23:16:13+08:00</lastmod>
   </url><url>
-    <loc>/categories/coding/</loc>
+    <loc>http://ztools.cf/blog/categories/coding/</loc>
     <lastmod>2021-07-31T23:16:13+08:00</lastmod>
   </url><url>
-    <loc>/tags/hugo/</loc>
+    <loc>http://ztools.cf/blog/tags/hugo/</loc>
     <lastmod>2021-07-31T23:16:13+08:00</lastmod>
   </url><url>
-    <loc>/</loc>
+    <loc>http://ztools.cf/blog/</loc>
     <lastmod>2021-07-31T23:16:13+08:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>http://ztools.cf/blog/posts/</loc>
     <lastmod>2021-07-31T23:16:13+08:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>http://ztools.cf/blog/tags/</loc>
     <lastmod>2021-07-31T23:16:13+08:00</lastmod>
   </url><url>
-    <loc>/posts/hugo-blog/</loc>
+    <loc>http://ztools.cf/blog/posts/hugo-blog/</loc>
     <lastmod>2021-07-31T23:16:13+08:00</lastmod>
   </url>
 </urlset>
