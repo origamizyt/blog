@@ -2,28 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://ztools.cf/blog/tags/about-this-blog/</loc>
+    <loc>http://localhost:1313/tags/about-this-blog/</loc>
     <lastmod>2021-07-31T23:16:13+08:00</lastmod>
   </url><url>
-    <loc>http://ztools.cf/blog/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2021-07-31T23:16:13+08:00</lastmod>
   </url><url>
-    <loc>http://ztools.cf/blog/categories/coding/</loc>
+    <loc>http://localhost:1313/categories/coding/</loc>
     <lastmod>2021-07-31T23:16:13+08:00</lastmod>
   </url><url>
-    <loc>http://ztools.cf/blog/tags/hugo/</loc>
+    <loc>http://localhost:1313/tags/hugo/</loc>
     <lastmod>2021-07-31T23:16:13+08:00</lastmod>
   </url><url>
-    <loc>http://ztools.cf/blog/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2021-07-31T23:16:13+08:00</lastmod>
   </url><url>
-    <loc>http://ztools.cf/blog/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2021-07-31T23:16:13+08:00</lastmod>
   </url><url>
-    <loc>http://ztools.cf/blog/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2021-07-31T23:16:13+08:00</lastmod>
   </url><url>
-    <loc>http://ztools.cf/blog/posts/hugo-blog/</loc>
+    <loc>http://localhost:1313/posts/hugo-blog-1/</loc>
     <lastmod>2021-07-31T23:16:13+08:00</lastmod>
   </url>
 </urlset>

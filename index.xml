@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>origamizyt 的博客</title>
-        <link>http://ztools.cf/blog/</link>
+        <link>http://localhost:1313/</link>
         <description>Recent content on origamizyt 的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-Hans</language>
-        <lastBuildDate>Sat, 31 Jul 2021 23:16:13 +0800</lastBuildDate><atom:link href="http://ztools.cf/blog/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 31 Jul 2021 23:16:13 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>用 Hugo 搭建自己的博客 #1</title>
-        <link>http://ztools.cf/blog/posts/hugo-blog/</link>
+        <link>http://localhost:1313/posts/hugo-blog-1/</link>
         <pubDate>Sat, 31 Jul 2021 23:16:13 +0800</pubDate>
         
-        <guid>http://ztools.cf/blog/posts/hugo-blog/</guid>
+        <guid>http://localhost:1313/posts/hugo-blog-1/</guid>
         <description>&lt;h2 id=&#34;什么是-hugo&#34;&gt;什么是 Hugo&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Hugo 是一个快速和现代的静态网站生成器写在 Go 中，旨在使网站创建再次有趣。&amp;ndash; Hugo 官网&lt;/p&gt;
+&lt;p&gt;Hugo 是一个快速和现代的静态网站生成器，使用 Go 写成，旨在使网站创建再次有趣。&amp;ndash; Hugo 官网&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;简而言之，Hugo 就是把 markdown 文件转化为 html 文件的工具，用 Go 语言写成，并且能够适配各种主题，
 支持博客论坛的框架。Hugo 可以快速 deploy 到各大主机供应商，节省无谓操作的时间。&lt;/p&gt;
 &lt;h2 id=&#34;安装-hugo&#34;&gt;安装 Hugo&lt;/h2&gt;
 &lt;p&gt;我的系统是 Windows-10-10.0.19041-SP0，使用 Chocolatey 安装 hugo:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;choco install hugo-extended -confirm
+&lt;pre&gt;&lt;code&gt;$ choco install hugo-extended -confirm
 &lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
 &lt;p&gt;注：你也可以安装 hugo，但这将导致一些主题不可用。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -62,7 +62,11 @@ $ cd my-blog
 &lt;p&gt;接下来是一些 Stack 特有属性。&lt;/p&gt;
 &lt;h3 id=&#34;paramssidebar-stack&#34;&gt;params.sidebar (Stack)&lt;/h3&gt;
 &lt;p&gt;将其中的 &lt;code&gt;subtitle&lt;/code&gt; 改为你想要的副标题。&lt;/p&gt;
-&lt;h3 id=&#34;paramssidebaravatar-stack&#34;&gt;params.sidebar.avatar (Stack)&lt;/h3&gt;
+&lt;h3 id=&#34;paramsmainsection-stack&#34;&gt;params.mainSection (Stack)&lt;/h3&gt;
+&lt;p&gt;将 MainSections 设置为你想要在首页上显示的模块。我将其设置为 Posts，以显示文章模块。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;mainSections&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;posts&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;paramssidebaravatar-stack&#34;&gt;params.sidebar.avatar (Stack)&lt;/h3&gt;
 &lt;p&gt;把你的头像放到 static 文件夹里，然后修改配置如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;sidebar&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;avatar&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
 &lt;span class=&#34;nx&#34;&gt;enabled&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
@@ -120,7 +124,7 @@ $ cd my-blog
 Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;访问 http://localhost:1313 来看看你的新博客！（我的博客长这样）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://ztools.cf/blog/blog/hugo-blog-1/overview.png&#34; alt=&#34;Overview&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./hugo-blog-1/overview.png&#34; alt=&#34;Overview&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;还不错吧！&lt;/p&gt;
 </description>
         </item>
