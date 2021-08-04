@@ -6,7 +6,54 @@
         <description>Recent content on origamizyt 的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-Hans</language>
-        <lastBuildDate>Sat, 31 Jul 2021 23:16:13 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 04 Aug 2021 13:51:49 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>用 Hugo 搭建自己的博客 #2</title>
+        <link>http://localhost:1313/posts/hugo-blog-2/</link>
+        <pubDate>Wed, 04 Aug 2021 13:51:49 +0800</pubDate>
+        
+        <guid>http://localhost:1313/posts/hugo-blog-2/</guid>
+        <description>&lt;h2 id=&#34;部署准备工作&#34;&gt;部署准备工作&lt;/h2&gt;
+&lt;h3 id=&#34;修改-configtoml&#34;&gt;修改 config.toml&lt;/h3&gt;
+&lt;p&gt;打开 &lt;code&gt;config.toml&lt;/code&gt;，修改如下内容：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;nx&#34;&gt;baseurl&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://your-domain.com/&amp;#34;&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;# 改为你的域名与路径&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;relativeurls&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;注：如果你没有自己的域名，将 &lt;code&gt;baseurl&lt;/code&gt; 设置为 &lt;code&gt;&amp;quot;/&amp;quot;&lt;/code&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;创建-git-代码库&#34;&gt;创建 Git 代码库&lt;/h3&gt;
+&lt;p&gt;在项目目录中初始化一个代码库并 Push：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git init
+$ git add .
+$ git commit -m &amp;quot;Initial commit&amp;quot;
+$ git branch -M main
+$ git remote add origin https://github.com/some-user/some-project.git
+$ git push -u origin main
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接下来就可以将网页部署至 Vercel 了。部署方式有两种，一种是将 &lt;code&gt;public&lt;/code&gt; 文件夹内本地渲染的静态内容部署，另一种是 Vercel 的自动化部署。
+由于 Stack 与 Vercel 的 Hugo 版本不兼容，我选择了第一种方法。想看第二种方法请直接跳过下一节。&lt;/p&gt;
+&lt;h2 id=&#34;部署渲染内容&#34;&gt;部署渲染内容&lt;/h2&gt;
+&lt;p&gt;使用 &lt;code&gt;hugo&lt;/code&gt; 命令在本地生成静态 HTML 文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ hugo
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;访问 &lt;a class=&#34;link&#34; href=&#34;https://vercel.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Vercel 主页&lt;/a&gt;，找到最底下的 Import Git Repository / Continue with Github（当然其他 Git 仓库也可以），
+授权 Vercel 访问 Github（可能需要科学上网）。在出现的仓库列表中选择你的代码库。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./images/hugo-blog-2/vercel-1.png&#34; alt=&#34;Vercel Setup&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;在 Create Team 面板中点击 Skip，把 Configure Project 中的 Framework Preset 改为 Other。
+点击 Deploy，稍等片刻就可以看到自己的网页了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./images/hugo-blog-2/vercel-2.png&#34; alt=&#34;Vercel Deployment&#34;  /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;vercel-自动部署&#34;&gt;Vercel 自动部署&lt;/h2&gt;
+&lt;p&gt;访问 &lt;a class=&#34;link&#34; href=&#34;https://vercel.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Vercel 主页&lt;/a&gt;，找到最底下的 Import Git Repository / Continue with Github（当然其他 Git 仓库也可以），
+授权 Vercel 访问 Github（可能需要科学上网）。在出现的仓库列表中选择你的代码库。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./images/hugo-blog-2/vercel-1.png&#34; alt=&#34;Vercel Setup&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;在 Create Team 面板中点击 Skip，检查 Configure Project 中的 Framework Preset 是否为 Hugo。
+点击 Deploy，等待 Hugo 渲染你的页面。&lt;/p&gt;
+&lt;p&gt;如果渲染出错，那么可以尝试第一种方式。&lt;/p&gt;
+&lt;h2 id=&#34;部署之后&#34;&gt;部署之后&lt;/h2&gt;
+&lt;p&gt;现在你的页面应该已经上线了。你的域名应以 .vercel.app 结尾，表明这是 Vercel 为你托管的。你也可以在 Settings / Domains 中
+添加自定义域名。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>用 Hugo 搭建自己的博客 #1</title>
         <link>http://localhost:1313/posts/hugo-blog-1/</link>
         <pubDate>Sat, 31 Jul 2021 23:16:13 +0800</pubDate>
@@ -124,7 +171,7 @@ $ cd my-blog
 Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;访问 http://localhost:1313 来看看你的新博客！（我的博客长这样）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./hugo-blog-1/overview.png&#34; alt=&#34;Overview&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./images/hugo-blog-1/overview.png&#34; alt=&#34;Overview&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;还不错吧！&lt;/p&gt;
 </description>
         </item>

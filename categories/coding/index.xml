@@ -6,7 +6,20 @@
     <description>Recent content in coding on origamizyt 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sat, 31 Jul 2021 23:16:13 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/coding/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Aug 2021 13:51:49 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/coding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>用 Hugo 搭建自己的博客 #2</title>
+      <link>http://localhost:1313/posts/hugo-blog-2/</link>
+      <pubDate>Wed, 04 Aug 2021 13:51:49 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/hugo-blog-2/</guid>
+      <description>部署准备工作 修改 config.toml 打开 config.toml，修改如下内容：
+baseurl = &amp;#34;http://your-domain.com/&amp;#34; # 改为你的域名与路径 relativeurls = true  注：如果你没有自己的域名，将 baseurl 设置为 &amp;quot;/&amp;quot;。
+ 创建 Git 代码库 在项目目录中初始化一个代码库并 Push：
+$ git init $ git add . $ git commit -m &amp;quot;Initial commit&amp;quot; $ git branch -M main $ git remote add origin https://github.com/some-user/some-project.git $ git push -u origin main 接下来就可以将网页部署至 Vercel 了。部署方式有两种，一种是将 public 文件夹内本地渲染的静态内容部署，另一种是 Vercel 的自动化部署。 由于 Stack 与 Vercel 的 Hugo 版本不兼容，我选择了第一种方法。想看第二种方法请直接跳过下一节。
+部署渲染内容 使用 hugo 命令在本地生成静态 HTML 文件：</description>
+    </item>
+    
     <item>
       <title>用 Hugo 搭建自己的博客 #1</title>
       <link>http://localhost:1313/posts/hugo-blog-1/</link>
