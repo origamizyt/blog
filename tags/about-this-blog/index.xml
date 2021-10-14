@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>about-this-blog on origamizyt 的博客</title>
-    <link>https://blog-origamizyt.vercel.app/tags/about-this-blog/</link>
+    <link>http://localhost:1313/tags/about-this-blog/</link>
     <description>Recent content in about-this-blog on origamizyt 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Wed, 04 Aug 2021 13:51:49 +0800</lastBuildDate><atom:link href="https://blog-origamizyt.vercel.app/tags/about-this-blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Aug 2021 13:51:49 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/about-this-blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>用 Hugo 搭建自己的博客 #2</title>
-      <link>https://blog-origamizyt.vercel.app/posts/hugo-blog-2/</link>
+      <link>http://localhost:1313/posts/hugo-blog-2/</link>
       <pubDate>Wed, 04 Aug 2021 13:51:49 +0800</pubDate>
       
-      <guid>https://blog-origamizyt.vercel.app/posts/hugo-blog-2/</guid>
+      <guid>http://localhost:1313/posts/hugo-blog-2/</guid>
       <description>部署准备工作 修改 config.toml 打开 config.toml，修改如下内容：
 baseurl = &amp;#34;http://your-domain.com/&amp;#34; # 改为你的域名与路径 relativeurls = true  注：如果你没有自己的域名，将 baseurl 设置为 &amp;quot;/&amp;quot;。
  创建 Git 代码库 在项目目录中初始化一个代码库并 Push：
@@ -22,10 +22,10 @@ $ git init $ git add . $ git commit -m &amp;quot;Initial commit&amp;quot; $ git 
     
     <item>
       <title>用 Hugo 搭建自己的博客 #1</title>
-      <link>https://blog-origamizyt.vercel.app/posts/hugo-blog-1/</link>
+      <link>http://localhost:1313/posts/hugo-blog-1/</link>
       <pubDate>Sat, 31 Jul 2021 23:16:13 +0800</pubDate>
       
-      <guid>https://blog-origamizyt.vercel.app/posts/hugo-blog-1/</guid>
+      <guid>http://localhost:1313/posts/hugo-blog-1/</guid>
       <description>什么是 Hugo  Hugo 是一个快速和现代的静态网站生成器，使用 Go 写成，旨在使网站创建再次有趣。&amp;ndash; Hugo 官网
  简而言之，Hugo 就是把 markdown 文件转化为 html 文件的工具，用 Go 语言写成，并且能够适配各种主题， 支持博客论坛的框架。Hugo 可以快速 deploy 到各大主机供应商，节省无谓操作的时间。
 安装 Hugo 我的系统是 Windows-10-10.0.19041-SP0，使用 Chocolatey 安装 hugo:
