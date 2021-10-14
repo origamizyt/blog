@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>origamizyt 的博客</title>
-        <link>http://localhost:1313/</link>
+        <link>https://blog-origamizyt.vercel.app/</link>
         <description>Recent content on origamizyt 的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-Hans</language>
-        <lastBuildDate>Thu, 14 Oct 2021 22:12:45 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Oct 2021 22:12:45 +0800</lastBuildDate><atom:link href="https://blog-origamizyt.vercel.app/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Getting to the top - Voice from a Curve Wrecker</title>
-        <link>http://localhost:1313/posts/curve-wrecker/</link>
+        <link>https://blog-origamizyt.vercel.app/posts/curve-wrecker/</link>
         <pubDate>Thu, 14 Oct 2021 22:12:45 +0800</pubDate>
         
-        <guid>http://localhost:1313/posts/curve-wrecker/</guid>
+        <guid>https://blog-origamizyt.vercel.app/posts/curve-wrecker/</guid>
         <description>&lt;p&gt;As a student in class 10, I’m surrounded by eminent learners and suffering from a considerable amount of peer pressure. I have neither courage nor evidence to declare myself as a Curve Wrecker, that is, one of the top students in class. However, Wang Mohan definitely merits this entitlement, as I am nobody compared to his altitude in attainments and depth in soul.&lt;/p&gt;
 &lt;p&gt;Being a Curve Wrecker, Wang does not display any sign of pride but only modesty, enabling him to maintain a clear mind in his study. Instead of bragging about his astonishing high score, Wang always dig into his papers and probe for potential misuse of knowledge or unrecognized mistakes after some examinations, even though answers that he gave are too flawless to be polished.&lt;/p&gt;
 &lt;p&gt;Throughout the first year of senior high, I’m always stunned at his capability to comprehension and utilization of his wisdom. Exactly how does he manage to grasp the piece of information so quickly and accurately? Until now, the question still remains, and to my suspicions the answer might be buried in his talent.&lt;/p&gt;
@@ -24,10 +24,10 @@
         </item>
         <item>
         <title>用 Hugo 搭建自己的博客 #2</title>
-        <link>http://localhost:1313/posts/hugo-blog-2/</link>
+        <link>https://blog-origamizyt.vercel.app/posts/hugo-blog-2/</link>
         <pubDate>Wed, 04 Aug 2021 13:51:49 +0800</pubDate>
         
-        <guid>http://localhost:1313/posts/hugo-blog-2/</guid>
+        <guid>https://blog-origamizyt.vercel.app/posts/hugo-blog-2/</guid>
         <description>&lt;h2 id=&#34;部署准备工作&#34;&gt;部署准备工作&lt;/h2&gt;
 &lt;h3 id=&#34;修改-configtoml&#34;&gt;修改 config.toml&lt;/h3&gt;
 &lt;p&gt;打开 &lt;code&gt;config.toml&lt;/code&gt;，修改如下内容：&lt;/p&gt;
@@ -71,10 +71,10 @@ $ git push -u origin main
         </item>
         <item>
         <title>用 Hugo 搭建自己的博客 #1</title>
-        <link>http://localhost:1313/posts/hugo-blog-1/</link>
+        <link>https://blog-origamizyt.vercel.app/posts/hugo-blog-1/</link>
         <pubDate>Sat, 31 Jul 2021 23:16:13 +0800</pubDate>
         
-        <guid>http://localhost:1313/posts/hugo-blog-1/</guid>
+        <guid>https://blog-origamizyt.vercel.app/posts/hugo-blog-1/</guid>
         <description>&lt;h2 id=&#34;什么是-hugo&#34;&gt;什么是 Hugo&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Hugo 是一个快速和现代的静态网站生成器，使用 Go 写成，旨在使网站创建再次有趣。&amp;ndash; Hugo 官网&lt;/p&gt;
