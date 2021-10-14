@@ -2,31 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/about-this-blog/</loc>
+    <loc>https://blog-origamizyt.vercel.app/categories/</loc>
+    <lastmod>2021-10-14T22:12:45+08:00</lastmod>
+  </url><url>
+    <loc>https://blog-origamizyt.vercel.app/categories/english/</loc>
+    <lastmod>2021-10-14T22:12:45+08:00</lastmod>
+  </url><url>
+    <loc>https://blog-origamizyt.vercel.app/tags/essay/</loc>
+    <lastmod>2021-10-14T22:12:45+08:00</lastmod>
+  </url><url>
+    <loc>https://blog-origamizyt.vercel.app/posts/curve-wrecker/</loc>
+    <lastmod>2021-10-14T22:12:45+08:00</lastmod>
+  </url><url>
+    <loc>https://blog-origamizyt.vercel.app/</loc>
+    <lastmod>2021-10-14T22:12:45+08:00</lastmod>
+  </url><url>
+    <loc>https://blog-origamizyt.vercel.app/posts/</loc>
+    <lastmod>2021-10-14T22:12:45+08:00</lastmod>
+  </url><url>
+    <loc>https://blog-origamizyt.vercel.app/tags/</loc>
+    <lastmod>2021-10-14T22:12:45+08:00</lastmod>
+  </url><url>
+    <loc>https://blog-origamizyt.vercel.app/tags/about-this-blog/</loc>
     <lastmod>2021-08-04T13:51:49+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://blog-origamizyt.vercel.app/categories/coding/</loc>
     <lastmod>2021-08-04T13:51:49+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/coding/</loc>
+    <loc>https://blog-origamizyt.vercel.app/tags/hugo/</loc>
     <lastmod>2021-08-04T13:51:49+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hugo/</loc>
+    <loc>https://blog-origamizyt.vercel.app/posts/hugo-blog-2/</loc>
     <lastmod>2021-08-04T13:51:49+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2021-08-04T13:51:49+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2021-08-04T13:51:49+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2021-08-04T13:51:49+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/hugo-blog-2/</loc>
-    <lastmod>2021-08-04T13:51:49+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/hugo-blog-1/</loc>
+    <loc>https://blog-origamizyt.vercel.app/posts/hugo-blog-1/</loc>
     <lastmod>2021-07-31T23:16:13+08:00</lastmod>
   </url>
 </urlset>
