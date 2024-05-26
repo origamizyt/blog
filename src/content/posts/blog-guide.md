@@ -73,3 +73,11 @@ pnpm new-post post-name
 在第二条横线下面就可以开始写 Markdown 了。如果你是第一次接触 Markdown 可以看看主题自带的两篇关于 Markdown 的文章。
 
 记得把 `src/content/spec/about.md` 也一起写了，要不然你的关于页面上还是奇怪的内容。
+
+## 发布
+
+比较稳定的 Hosting 服务也就 Netlify 和 Vercel 了。不过 Vercel 的 `*.vercel.app` 子域名被 DNS 污染了，于是 Netlify。如果你放到自己的服务器上另当别论。
+
+先 push 到 Github 上，然后 Netlify 里选择 Import Existing Project，选择你的仓库，Netlify 能够自动识别 build 命令。大功告成。
+
+但是这时候博客里显示的 URL 应该是 Fuwari 的 URL，于是在 `astro.config.mjs` 中把 `site` 改成自己的域名（或者 Netlify 分配的域名），重新 push，Netlify 会自动发布新的 commit。
